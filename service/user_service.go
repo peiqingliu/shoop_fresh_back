@@ -8,6 +8,7 @@ import (
 	"shoop_Fresh_back/query"
 	"shoop_Fresh_back/repository"
 	"shoop_Fresh_back/utils"
+	"time"
 )
 
 
@@ -49,6 +50,8 @@ func (srv *UserService) Add(user model.User) (*model.User, error) {
 		user.Password = utils.Md5("123456")
 	}
 	user.IsDeleted = false
+	user.CreateAt = time.Now()
+	user.UpdateAt = time.Now()
 	return srv.Repo.Add(user)
 }
 

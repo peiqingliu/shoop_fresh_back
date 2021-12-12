@@ -44,7 +44,7 @@ var local  = time.FixedZone("CST",8*3600)
 /*
  *	获取当前时间
  */
-func getNow() string  {
+func GetNow() string  {
 		now := time.Now().In(local).Format(TimeLayout)
 		return now
 }
